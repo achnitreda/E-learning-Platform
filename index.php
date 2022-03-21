@@ -1,5 +1,11 @@
 <?php
      session_start();
+        if(isset($_SESSION['name'])) {
+            header("location: dashboard.php");
+            die();
+        }
+
+
      require_once ('db.php');  
         $remember=$_POST['remember'] ?? '';
         $name=$_COOKIE['name'] ?? '';
@@ -8,9 +14,9 @@
         if($remember =='true'){
             setcookie ("name",$_POST["name"],time()+ 86400);
             setcookie ("password",$_POST["password"],time()+ 86400);
-        }else {
-        setcookie("name","");
-        setcookie("password","");
+        } else {
+            setcookie("name","");
+            setcookie("password","");
         }
      if(isset($_POST["login"]))  
      {  
@@ -25,14 +31,14 @@
                $statement->execute(  
                     array(  
                          'name'=> $_POST["name"],  
-                         'password'=> $_POST["password"]  
+                         'password'=> hash('ripemd160', $_POST['password'])  
                     )  
                );  
                $count = $statement->rowCount();  
                if($count > 0)  
                {  
                     $_SESSION["name"] = $_POST["name"];  
-                    header("location: dashboard.php");  
+                    header("location: dashboard.php");
                }  
                else  
                {  

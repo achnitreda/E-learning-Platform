@@ -33,23 +33,23 @@ require '../../components/header.php';
                             <form method="POST">
                                 <div class="form-group">
                                     <label for="name">Name:</label>
-                                    <input type="text" name="name" id="name" class="form-control">
+                                    <input type="text" name="name" id="name" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="email">Email:</label>
-                                    <input type="email" name="email" id="email" class="form-control">
+                                    <input type="email" name="email" id="email" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="phone">Phone:</label>
-                                    <input type="text" name="phone" id="phone" class="form-control">
+                                    <input type="text" name="phone" id="phone" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="enroll_number">Enroll Number:</label>
-                                    <input type="text" name="enroll_number" id="enroll_number" class="form-control">
+                                    <input type="text" name="enroll_number" id="enroll_number" class="form-control" required>
                                 </div>
                                 <div class="form-group">
                                     <label for="date_of_admission">Date of Admission:</label>
-                                    <input type="text" name="date_of_admission" id="date_of_admission" class="form-control">
+                                    <input type="text" name="date_of_admission" id="date_of_admission" class="form-control" required>
                                 </div>
                                 <div class="group-form">
                                 <button type="submit" class="btn btn-info mt-2 w-100 text-white">Add student</button>
